@@ -6,14 +6,14 @@ namespace Massive.Sybase.Example
     {
         static void Main(string[] args)
         {
-           var users = DB.Current.Query("select * from user_info");
+           var results = DB.Current.Query("select * from <tablename>");
 
            System.Console.WriteLine("Massive Results...");
-           Thread.Sleep(4000);
+           Thread.Sleep(1000);
            
-            foreach (var u in users)
+            foreach (var r in results)
            {
-               System.Console.WriteLine(u.user_id);
+               System.Console.WriteLine(r.<col_name>);
            }
 
             System.Console.WriteLine("Done!");
